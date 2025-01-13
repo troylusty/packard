@@ -4,6 +4,8 @@
   <h5>Packard is a simple RSS aggregator meant to allow you to take a quick glance at what's occurring in topics you care about.</h5>
 </div>
 
+This is my first attempt at making something with Rust so that I may learn alongside creating something that I personally find useful.
+
 ![Demo](https://github.com/user-attachments/assets/651365e9-6549-4924-8d85-967397bfcbb3)
 
 ## Configuration
@@ -49,7 +51,3 @@ news = [
 After running Packard with your configured settings, the parsed results can be opened in your default browser however your terminal allows for opening URLs. For example the keybind for this with [Foot](https://codeberg.org/dnkl/foot#urls) is `ctrl` + `shift` + `o`.
 
 Currently no keyboard interaction is implemented. To get around this you can pipe the output of Packard into a tool like `less` like so: `packard -c 12 -l news -s 3 | less`. Be aware, this will remove any text formatting that has been applied.
-
-## Notes
-
-For anyone who may or may not look at this, I am very new to Rust with this being my first project making use of it. So expect mistakes.
