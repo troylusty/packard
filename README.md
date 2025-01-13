@@ -4,7 +4,7 @@
   <h5>Packard is a simple RSS aggregator meant to allow you to take a quick glance at what's occurring in topics you care about.</h5>
 </div>
 
-![Demo](https://github.com/user-attachments/assets/5ce5e6a5-5e2f-44cf-8fb1-6c3862685f6e)
+![Demo](https://github.com/user-attachments/assets/651365e9-6549-4924-8d85-967397bfcbb3)
 
 ## Configuration
 
