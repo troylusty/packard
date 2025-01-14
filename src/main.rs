@@ -1,6 +1,5 @@
 use indicatif::ProgressStyle;
 use std::error::Error;
-use terminal_link::Link;
 use tokio;
 
 mod config;
@@ -20,14 +19,15 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 .try_into()
                 .expect("Could not convert list length"),
         );
-        pb.set_style(ProgressStyle::with_template("{wide_bar} {percent} {msg}").unwrap());
+        pb.set_style(ProgressStyle::with_template("{wide_bar} {percent}% {msg}").unwrap());
         let all_items = data::run_tasks(values.to_vec(), count, skip_amount, &pb).await;
         pb.finish_and_clear();
 
         for item in all_items {
             println!(
-                "\x1b[1m>\x1b[0m \x1b[1;32m{}\x1b[0m\n\x1b[3m\x1b[2m{}\x1b[0m\n\x1b[2m{}\x1b[0m\n",
-                Link::new(&item.title, &item.link),
+                "\x1b[1m>\x1b[0m \x1b[1;32m\x1b]8;;{}\x1b\\{}\x1b]8;;\x1b\\\x1b[0m\n\x1b[3m\x1b[2m{}\x1b[0m\n\x1b[2m{}\x1b[0m\n",
+                item.link,
+                item.title,
                 utils::trim_chars(&item.description),
                 item.pub_date.to_string()
             );
