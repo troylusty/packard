@@ -50,4 +50,4 @@ news = [
 
 After running Packard with your configured settings, the parsed results can be opened in your default browser however your terminal allows for opening URLs. For example the keybind for this with [Foot](https://codeberg.org/dnkl/foot#urls) is `ctrl` + `shift` + `o`.
 
-Currently no keyboard interaction is implemented. To get around this you can pipe the output of Packard into a tool like `less` like so: `packard -c 12 -l news -s 3 | less`. Be aware, this will remove any text formatting that has been applied.
+Currently no keyboard interaction is implemented. To get around this you can pipe the output of Packard into a tool like `less` like so: `packard -c 12 -l news -s 3 | less`.
