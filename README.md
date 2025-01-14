@@ -8,6 +8,24 @@
 
 This is my first attempt at making something with Rust so that I may learn alongside creating something that I personally find useful.
 
+## Installation
+
+On NixOS you can install Packard by including it as an input in flake.nix, then adding it to your system packages.
+
+```nix
+inputs = {
+    packard.url = "github:troylusty/packard";
+};
+```
+
+```nix
+environment.systemPackages = {
+    inputs.packard.packages."${pkgs.system}".default
+};
+```
+
+Alternatively, [the latest release](https://github.com/troylusty/packard/releases/latest) binary is available.
+
 ## Configuration
 
 There are now several options available to be configured, with more on their way. As of now Packard's config file should be placed within `$HOME/.config/packard` and formatted in TOML.
