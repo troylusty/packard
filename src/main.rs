@@ -1,3 +1,4 @@
+use indicatif::ProgressStyle;
 use std::error::Error;
 use terminal_link::Link;
 use tokio;
@@ -19,6 +20,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 .try_into()
                 .expect("Could not convert list length"),
         );
+        pb.set_style(ProgressStyle::with_template("{wide_bar} {percent} {msg}").unwrap());
         let all_items = data::run_tasks(values.to_vec(), count, skip_amount, &pb).await;
         pb.finish_and_clear();
 
