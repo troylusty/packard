@@ -13,7 +13,12 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let (count, skip_amount, list) = config::collate_values(args, &config);
 
     if let Some(values) = config.lists.get(&list) {
-        let pb = indicatif::ProgressBar::new(12);
+        let pb = indicatif::ProgressBar::new(
+            values
+                .len()
+                .try_into()
+                .expect("Could not convert list length"),
+        );
         let all_items = data::run_tasks(values.to_vec(), count, skip_amount, &pb).await;
         pb.finish_and_clear();
 
