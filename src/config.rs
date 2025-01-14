@@ -31,6 +31,47 @@ pub fn parse_cli() -> Cli {
     args
 }
 
+pub fn collate_values(args: Cli, config: &Config) -> (u8, u8, String) {
+    if args.verbose {
+        println!("{:?}", args);
+        println!("Selected list: {:?}", config.selected_list);
+        println!("Items: {:?}", config.lists);
+    }
+
+    let count: u8 = if args.count.is_some() {
+        args.count.expect("Count flag wrong?")
+    } else if config.count.is_some() {
+        config.count.expect("Unable to use count value from config")
+    } else {
+        8
+    };
+
+    let skip_amount: u8 = if args.skip_amount.is_some() {
+        args.skip_amount.expect("Skip amount flag wrong?")
+    } else if config.skip_amount.is_some() {
+        config
+            .skip_amount
+            .expect("Unable to use skip amount value from config")
+    } else {
+        0
+    };
+
+    let list: String = if args.selected_list.is_some() {
+        args.selected_list
+            .clone()
+            .expect("Error getting selected list from flag")
+    } else if config.selected_list.is_some() {
+        config
+            .selected_list
+            .clone()
+            .expect("Need to specify a selected list")
+    } else {
+        panic!("Need to set selected list")
+    };
+
+    (count, skip_amount, list)
+}
+
 pub fn validate_config() -> Config {
     let xdg_dirs = BaseDirectories::new().expect("Failed to get XDG directories");
     let config_path = xdg_dirs
