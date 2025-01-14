@@ -16,9 +16,7 @@ toml = "0.8.19"
 xdg = "2.5.2"
 futures = "0.3.31"
 indicatif = "0.17.9"
-colored = "3.0.0"
 terminal-link = "0.1.0"
-emojis = "0.6.4"
 
 [profile.dev]
 opt-level = 0

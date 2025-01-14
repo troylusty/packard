@@ -1,7 +1,5 @@
 use chrono::{DateTime, Utc};
 use clap::Parser;
-use colored::Colorize;
-use emojis;
 use futures::future::join_all;
 use indicatif::{ProgressBar, ProgressStyle};
 use reqwest::get;
@@ -164,11 +162,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
         for item in all_items {
             println!(
-                "{} {}\n{}\n{}\n",
-                emojis::get_by_shortcode("newspaper").unwrap(),
+                "\x1b[1m>\x1b[0m \x1b[1;32m{}\x1b[0m\n\x1b[3m\x1b[2m{}\x1b[0m\n\x1b[2m{}\x1b[0m\n",
                 Link::new(&item.title, &item.link),
-                trim_chars(&item.description).dimmed().italic(),
-                item.pub_date.to_string().dimmed().bold()
+                trim_chars(&item.description),
+                item.pub_date.to_string()
             );
         }
     } else {
