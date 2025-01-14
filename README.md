@@ -4,7 +4,7 @@
   <h5>Packard is a simple RSS aggregator meant to allow you to take a quick glance at what's occurring in topics you care about.</h5>
 </div>
 
-![Demo](https://github.com/user-attachments/assets/f37f877c-ffc2-496c-9da4-8cbce0fe02a7)
+![Demo](https://github.com/user-attachments/assets/17f228c7-a931-4988-a1c0-8cc7190d4349)
 
 This is my first attempt at making something with Rust so that I may learn alongside creating something that I personally find useful.
 
