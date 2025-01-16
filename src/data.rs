@@ -1,9 +1,9 @@
+use anyhow::{Context, Result};
 use chrono::{DateTime, Utc};
 use futures::future::join_all;
 use indicatif::ProgressBar;
 use reqwest::get;
 use rss::Channel;
-use std::error::Error;
 
 #[derive(Debug)]
 pub struct FeedItem {
@@ -13,9 +13,14 @@ pub struct FeedItem {
     pub pub_date: DateTime<Utc>,
 }
 
-async fn fetch_rss(url: &str, pb: &ProgressBar) -> Result<Channel, Box<dyn Error>> {
-    let response = get(url).await?.text().await?;
-    let channel = Channel::read_from(response.as_bytes())?;
+async fn fetch_rss(url: &str, pb: &ProgressBar) -> Result<Channel> {
+    let response = get(url)
+        .await
+        .context("Failed to send request")?
+        .text()
+        .await
+        .context("Failed to read response text")?;
+    let channel = Channel::read_from(response.as_bytes()).context("Failed to parse RSS feed")?;
     pb.inc(1);
     pb.set_message(format!("Processing: {}", channel.title));
     Ok(channel)

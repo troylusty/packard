@@ -1,13 +1,12 @@
 use indicatif::ProgressStyle;
-use std::error::Error;
-use tokio;
+use tokio::io;
 
 mod config;
 mod data;
 mod utils;
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> Result<(), io::Error> {
     let config = config::validate_config();
     let args = config::parse_cli();
     let (count, skip_amount, list) = config::collate_values(args, &config);

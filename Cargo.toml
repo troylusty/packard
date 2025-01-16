@@ -16,6 +16,7 @@ toml = "0.8.19"
 xdg = "2.5.2"
 futures = "0.3.31"
 indicatif = "0.17.9"
+anyhow = "1.0.95"
 
 [profile.dev]
 opt-level = 0

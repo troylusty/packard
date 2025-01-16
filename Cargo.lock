@@ -82,6 +82,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "anyhow"
+version = "1.0.95"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "34ac096ce696dc2fcabef30516bb13c0a68a11d30131d3df6f04711467681b04"
+
+[[package]]
 name = "atom_syndication"
 version = "0.12.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1025,8 +1031,9 @@ dependencies = [
 
 [[package]]
 name = "packard"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
+ "anyhow",
  "chrono",
  "clap",
  "futures",
