@@ -2,7 +2,6 @@ use clap::Parser;
 use serde::Deserialize;
 use std::collections::HashMap;
 use std::fs;
-use toml;
 use xdg::BaseDirectories;
 
 #[derive(Parser, Debug)]
