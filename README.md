@@ -16,9 +16,9 @@ On NixOS you can install Packard by including it as an input in flake.nix, then 
 inputs = {
     packard.url = "github:troylusty/packard";
 };
-```
 
-```nix
+...
+
 environment.systemPackages = {
     inputs.packard.packages."${pkgs.system}".default
 };
