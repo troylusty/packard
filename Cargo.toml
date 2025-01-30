@@ -1,6 +1,6 @@
 [package]
 name = "packard"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2021"
 description = "A terminal based feed checker."
 authors = ["Troy Lusty <hello@troylusty.com>"]

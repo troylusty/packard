@@ -24,7 +24,7 @@ environment.systemPackages = {
 };
 ```
 
-Alternatively, [the latest release](https://github.com/troylusty/packard/releases/latest) binary is available.
+Alternatively, the [latest release](https://github.com/troylusty/packard/releases/latest) binary is available.
 
 ## Configuration
 
