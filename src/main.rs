@@ -27,7 +27,7 @@ async fn main() -> Result<(), io::Error> {
                 "\x1b[1m>\x1b[0m \x1b[1;32m\x1b]8;;{}\x1b\\{}\x1b]8;;\x1b\\\x1b[0m\n\x1b[3m\x1b[2m{}\x1b[0m\n\x1b[2m{}\x1b[0m\n",
                 item.link,
                 item.title,
-                utils::remove_html_tags(&utils::trim_chars(&item.description)),
+                utils::trim_chars(&utils::remove_html_tags(&item.description)),
                 item.pub_date.to_string()
             );
         }
