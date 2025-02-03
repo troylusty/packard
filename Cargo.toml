@@ -7,7 +7,7 @@ authors = ["Troy Lusty <hello@troylusty.com>"]
 
 [dependencies]
 chrono = "0.4.39"
-clap = { version = "4.5.26", features = ["derive"] }
+clap = { version = "4.5.27", features = ["derive"] }
 reqwest = "0.12.12"
 rss = "2.0.11"
 serde = { version = "1.0.217", features = ["derive"] }
@@ -15,7 +15,7 @@ tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread"] }
 toml = "0.8.19"
 xdg = "2.5.2"
 futures = "0.3.31"
-indicatif = "0.17.9"
+indicatif = "0.17.11"
 anyhow = "1.0.95"
 
 [profile.dev]
