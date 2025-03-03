@@ -6,17 +6,17 @@ description = "A terminal based feed checker."
 authors = ["Troy Lusty <hello@troylusty.com>"]
 
 [dependencies]
-chrono = "0.4.39"
-clap = { version = "4.5.29", features = ["derive"] }
+chrono = "0.4.40"
+clap = { version = "4.5.31", features = ["derive"] }
 reqwest = "0.12.12"
 rss = "2.0.12"
-serde = { version = "1.0.217", features = ["derive"] }
+serde = { version = "1.0.218", features = ["derive"] }
 tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread"] }
 toml = "0.8.20"
 xdg = "2.5.2"
 futures = "0.3.31"
 indicatif = "0.17.11"
-anyhow = "1.0.95"
+anyhow = "1.0.97"
 
 [profile.dev]
 opt-level = 0
